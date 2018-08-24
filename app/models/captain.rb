@@ -14,6 +14,6 @@ class Captain < ActiveRecord::Base
    end
 
   def self.talented_seafarers
-    self.motorboat_operators & self.sailors
+    motorboat_operators & sailors
   end
 end
