@@ -21,5 +21,6 @@ class Boat < ActiveRecord::Base
 
   def self.without_a_captain
     Boat.all.select{|b| b.captain_id == nil}.flatten
+    binding.pry
   end
 end
