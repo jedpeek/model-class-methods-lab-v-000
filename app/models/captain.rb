@@ -10,4 +10,6 @@ class Captain < ActiveRecord::Base
   end
 
   def self.talented_seafarers
+    includes(boats: :classifications).where('classifications.name = ? or ?', 'Sailboat, Motorboat').uniq
+  end
 end
