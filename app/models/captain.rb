@@ -15,7 +15,7 @@ class Captain < ActiveRecord::Base
 
   def self.talented_seafarers
     m = motorboat_operators.map{|m| m.name}
-    s = sailors
+    s = sailors.map{|m| m.name}
     m & s
   end
 end
