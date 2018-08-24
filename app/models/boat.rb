@@ -20,7 +20,7 @@ class Boat < ActiveRecord::Base
   end
 
   def self.without_a_captain
-    Boat.all.select{|b| b.captain_id == nil}
+    a = Boat.all.select{|b| b.captain_id == nil}
     binding.pry
   end
 end
