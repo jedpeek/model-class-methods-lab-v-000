@@ -14,8 +14,10 @@ class Captain < ActiveRecord::Base
   end
 
   def self.talented_seafarers
-    m = motorboat_operators.map{|m| m.name}
-    s = sailors.map{|m| m.name}
-    m & s
+    where("id IN (?)", self.sailors.pluck(:id) & self.motorboat_operators.pluck(:id))
+  end
+
+  def self.non_sailors
+    where.not("id IN (?)", self.sailors.pluck(:id))
   end
 end
