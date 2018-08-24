@@ -20,6 +20,6 @@ class Boat < ActiveRecord::Base
   end
 
   def self.without_a_captain
-    Boat.all.select{|b| b.captain_id == nil}.pluck(:name)
+    Boat.all.select{|b| b.captain_id == nil}.flatten
   end
 end
