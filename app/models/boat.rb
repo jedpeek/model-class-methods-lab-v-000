@@ -8,6 +8,6 @@ class Boat < ActiveRecord::Base
   end
 
   def self.dinghy
-    Boat.where("boat.length > ?", 20)
+    Boat.where("length > ?", 20)
   end
 end
