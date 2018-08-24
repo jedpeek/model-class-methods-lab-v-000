@@ -28,7 +28,7 @@ class Boat < ActiveRecord::Base
   end
 
   def self.with_three_classifications
-    includes(:classifications).where('classifications.count = ?', 3)
+    includes(:classifications).where('boat.classifications_ids >= ?', 3)
   end
 
   def self.longest
